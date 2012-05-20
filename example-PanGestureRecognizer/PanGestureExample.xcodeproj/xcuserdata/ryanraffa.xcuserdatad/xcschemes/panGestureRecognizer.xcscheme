@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "example-PanGestureRecognizer.app"
+               BuildableName = "PanGestureExample.app"
                BlueprintName = "PanGestureExample"
                ReferencedContainer = "container:PanGestureExample.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "example-PanGestureRecognizer.app"
+            BuildableName = "PanGestureExample.app"
             BlueprintName = "PanGestureExample"
             ReferencedContainer = "container:PanGestureExample.xcodeproj">
          </BuildableReference>
@@ -60,7 +60,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "example-PanGestureRecognizer.app"
+            BuildableName = "PanGestureExample.app"
             BlueprintName = "PanGestureExample"
             ReferencedContainer = "container:PanGestureExample.xcodeproj">
          </BuildableReference>
