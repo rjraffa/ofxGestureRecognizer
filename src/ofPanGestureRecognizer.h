@@ -2,8 +2,7 @@
  *  ofPanGestureRecognizer.h
  *
  *  Created by Ryan Raffa on 5/13/12.
- *
- *  Based on sample code posted by daanvanhasselt on the openFrameworks forum
+ *  Based on example code by http://www.daanvanhasselt.com
  *
  */
 
@@ -14,8 +13,11 @@
     UIPanGestureRecognizer *panGestureRecognizer;
 
 @public
+    CGPoint                startLocation;
+    CGPoint                endLocation;
     CGPoint                touchLocation;
     CGPoint                velocity;
+    BOOL                   swipping;
 }  
 
 @property(assign,nonatomic) BOOL cancelsTouchesInView;

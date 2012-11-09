@@ -22,7 +22,7 @@ public:
 	void touchUp(ofTouchEventArgs &touch);
 	void touchDoubleTap(ofTouchEventArgs &touch);
 	void touchCancelled(ofTouchEventArgs &touch);
-
+    
 	void lostFocus();
 	void gotFocus();
 	void gotMemoryWarning();
@@ -33,12 +33,19 @@ public:
     //to identify specific pan/pinch/tap/swipe gestures
     ofPanGestureRecognizer      *recogPan;
     
-    ofPoint          translation;
-    ofPoint          velocity;
-        
-    ofPoint     pos;
-    ofPoint     speed;
+    //variables used by openFrameworks
+    ofPoint         pos;
+    ofPoint         speed;
+    ofPoint         startLocAdjusted;
+    ofPoint         endLocAdjusted;
+    float         angle;
     
+    //info coming from ofPanGestureRecognizer
+    ofPoint         translation;
+    ofPoint         velocity;
+    ofPoint         startLocation;
+    ofPoint         endLocation;    
+    bool            swipping;
     
 };
 

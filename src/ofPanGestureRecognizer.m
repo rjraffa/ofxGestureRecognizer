@@ -3,8 +3,6 @@
  *
  *  Created by Ryan Raffa on 5/13/12.
  *
- *  Based on sample code posted by daanvanhasselt on the openFrameworks forum
- *
  */
 
 #import "ofPanGestureRecognizer.h"  
@@ -18,25 +16,37 @@
         panGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action: @selector(handlePan:)];  
         [view addGestureRecognizer:panGestureRecognizer];
         panGestureRecognizer.cancelsTouchesInView = NO;
+        [panGestureRecognizer release];
     }
     return self;  
 }  
 
 -(void)handlePan:(UIPanGestureRecognizer *) gr{  
     
+    
     if([gr state] == UIGestureRecognizerStateBegan){  
-        NSLog(@"Pan!"); 
+        NSLog(@"Started Pan!"); 
+        swipping = TRUE;
+        startLocation   = [gr translationInView: gr.view ];
     } 
-    // UIGestureRecognizerStateEnded can be changed based on when you want specific readings
+
+//    if ([gr state] == UIGestureRecognizerStateChanged) {
+//        touchLocation   = [gr translationInView: gr.view ];
+//        velocity        = [gr velocityInView: gr.view ];
+//    }
+    
     if([gr state] == UIGestureRecognizerStateEnded){
+        endLocation   = [gr translationInView: gr.view ];
         touchLocation   = [gr translationInView: gr.view ];
         velocity        = [gr velocityInView: gr.view ];
-    }
+        swipping = FALSE;
+        NSLog(@"Not Panning!"); 
+    }     
+
 }
 
 
--(void)dealloc{
-    [panGestureRecognizer release];
+-(void)dealloc{  
     [super dealloc];  
 }  
 
