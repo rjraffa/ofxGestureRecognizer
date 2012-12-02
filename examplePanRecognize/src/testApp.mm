@@ -6,9 +6,6 @@ void testApp::setup(){
 	ofSetFrameRate(30);
     ofBackground(255, 255, 255);
     
-    translation = 0;
-    velocity = 0;
-    
     basicFont.loadFont("verdana.ttf", 10, true, true, true);        //load in font that is used throughout app
     
     ofxAccelerometer.setup();               //accesses accelerometer data
@@ -20,9 +17,12 @@ void testApp::setup(){
     
     pos = 0.0;
     speed = 0.0;
+    angle = 0.0;
+    
+    velocity = 0;
     startLocation = 0.0;
     endLocation = 0.0;
-    swipping = false;
+    panning = false;
     
 }
 
@@ -32,7 +32,7 @@ void testApp::update() {
     //divide by the amount you like to get the speed your looking for 
     pos = pos + speed/20.0;
  
-    swipping =     recogPan->swipping;
+    panning =     recogPan->panning;
         
 }
 
@@ -54,14 +54,8 @@ void testApp::draw(){
     ofDrawBitmapString("startLocationY: "+ofToString(startLocation.y), 25, 125);
     ofDrawBitmapString("endLocationX: "+ofToString(endLocation.x), 25, 145);
     ofDrawBitmapString("endLocationY: "+ofToString(endLocation.y), 25, 165);
-    ofDrawBitmapString("swipping: "+ofToString(swipping), 25, 185);
-    
-    ofDrawBitmapString("startLocAdjustedX: "+ofToString(startLocAdjusted.x), 25, 205);
-    ofDrawBitmapString("startLocAdjustedY: "+ofToString(startLocAdjusted.y), 25, 225);
-    ofDrawBitmapString("endLocAdjustedX: "+ofToString(endLocAdjusted.x), 25, 245);
-    ofDrawBitmapString("endLocAdjustedX: "+ofToString(endLocAdjusted.y), 25, 265);
-
-    ofDrawBitmapString("angle: "+ofToString(angle), 25, 285);
+    ofDrawBitmapString("panning: "+ofToString(panning), 25, 185);
+    ofDrawBitmapString("angle: "+ofToString(angle), 25, 205);
     
 }
 
@@ -78,10 +72,6 @@ void testApp::touchDown(ofTouchEventArgs &touch){
     pos.x = touch.x;
     pos.y = touch.y;
     
-    //gets origin of possible finger pan
-    startLocAdjusted.x = touch.x;
-    startLocAdjusted.y = touch.y;
-    
 }
 
 //--------------------------------------------------------------
@@ -89,13 +79,9 @@ void testApp::touchMoved(ofTouchEventArgs &touch){
     
     pos.x = touch.x;
     pos.y = touch.y;
-    
-    //gets position of possible end of finger pan
-    endLocAdjusted.x = touch.x;
-    endLocAdjusted.y = touch.y;    
-    
+        
     //gets official start of swipe and adjusts original swipe beginning
-    if (swipping) {
+    if (panning) {
         startLocation.x =     recogPan->startLocation.x;
         startLocation.y =     recogPan->startLocation.y;
     }
@@ -115,17 +101,11 @@ void testApp::touchUp(ofTouchEventArgs &touch){
     //grabs actual end position which is based off of real origin
     endLocation.x =     recogPan->endLocation.x;
     endLocation.y =     recogPan->endLocation.y;
-
-    //adjust start point
-    startLocAdjusted+=startLocation;
-
-    //adjustment of official end point
-    endLocAdjusted = startLocAdjusted + endLocation;
     
     //determine angle
-    float deltaY = endLocAdjusted.y - startLocAdjusted.y;
-    float delatX = endLocAdjusted.x - startLocAdjusted.x;
-    angle = atan2(deltaY, delatX) * 180 / PI;
+    float deltaY = recogPan->delta.y;
+    float deltaX = recogPan->delta.x;
+    angle = atan2(deltaY, deltaX) * 180 / PI;
     
     
 }

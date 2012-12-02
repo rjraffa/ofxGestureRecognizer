@@ -36,16 +36,13 @@ public:
     //variables used by openFrameworks
     ofPoint         pos;
     ofPoint         speed;
-    ofPoint         startLocAdjusted;
-    ofPoint         endLocAdjusted;
-    float         angle;
+    float           angle;
     
     //info coming from ofPanGestureRecognizer
-    ofPoint         translation;
     ofPoint         velocity;
     ofPoint         startLocation;
     ofPoint         endLocation;    
-    bool            swipping;
+    bool            panning;
     
 };
 
