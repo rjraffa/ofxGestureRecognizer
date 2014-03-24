@@ -29,22 +29,16 @@ class testApp : public ofxiOSApp{
         void gotMemoryWarning();
         void deviceOrientationChanged(int newOrientation);
 	
-        ofTrueTypeFont basicFont;
-        
         //to identify specific pan/pinch/tap/swipe gestures
-        ofPanGestureRecognizer      *recogPan;
-        
-        //variables used by openFrameworks
-        ofPoint         pos;
-        ofPoint         speed;
-        float           angle;
-        
-        //info coming from ofPanGestureRecognizer
-        ofPoint         velocity;
-        ofPoint         startLocation;
-        ofPoint         endLocation;
-        bool            panning;
-	
+        ofSwipeGestureRecognizer      swipping;
+    
+        void onSwipe(ofSwipeGestureRecognizerArgs & args);
+    
+        //info coming from ofSwipeGestureRecognizer and used by oF
+        int             direction;
+        int             totalSwipes;
+    
+    
         bool            retina;
 };
 

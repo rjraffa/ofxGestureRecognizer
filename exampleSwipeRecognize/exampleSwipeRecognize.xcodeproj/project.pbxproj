@@ -30,9 +30,9 @@
 		E4A823A412561BE3002F86A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4A823A312561BE3002F86A2 /* CoreGraphics.framework */; };
 		E4D8936E11527B74007E1F53 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936B11527B74007E1F53 /* main.mm */; };
 		E4D8936F11527B74007E1F53 /* testApp.mm in Sources */ = {isa = PBXBuildFile; fileRef = E4D8936D11527B74007E1F53 /* testApp.mm */; };
-		EC51F9F118DFD32200EF932D /* ofSwipeGestureRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = EC51F9F018DFD32200EF932D /* ofSwipeGestureRecognizer.mm */; };
 		ECE069E518DBBE5400CA560A /* ofPanGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE069DC18DBBE5400CA560A /* ofPanGestureRecognizer.m */; };
 		ECE069E618DBBE5400CA560A /* ofPinchGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE069DE18DBBE5400CA560A /* ofPinchGestureRecognizer.m */; };
+		ECE069E718DBBE5400CA560A /* ofSwipeGestureRecognizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = ECE069E018DBBE5400CA560A /* ofSwipeGestureRecognizer.mm */; };
 		ECE069E818DBBE5400CA560A /* ofTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE069E218DBBE5400CA560A /* ofTapGestureRecognizer.m */; };
 /* End PBXBuildFile section */
 
@@ -55,7 +55,7 @@
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D6058910D05DD3D006BFB54 /* examplePanRecognize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = examplePanRecognize.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* exampleSwipeRecognize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exampleSwipeRecognize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* ofxiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxiOS_Prefix.pch; sourceTree = "<group>"; };
@@ -81,12 +81,12 @@
 		E4D8936B11527B74007E1F53 /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = main.mm; path = src/main.mm; sourceTree = SOURCE_ROOT; };
 		E4D8936C11527B74007E1F53 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
 		E4D8936D11527B74007E1F53 /* testApp.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = testApp.mm; path = src/testApp.mm; sourceTree = SOURCE_ROOT; };
-		EC51F9F018DFD32200EF932D /* ofSwipeGestureRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofSwipeGestureRecognizer.mm; sourceTree = "<group>"; };
 		ECE069DB18DBBE5400CA560A /* ofPanGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofPanGestureRecognizer.h; sourceTree = "<group>"; };
 		ECE069DC18DBBE5400CA560A /* ofPanGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ofPanGestureRecognizer.m; sourceTree = "<group>"; };
 		ECE069DD18DBBE5400CA560A /* ofPinchGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofPinchGestureRecognizer.h; sourceTree = "<group>"; };
 		ECE069DE18DBBE5400CA560A /* ofPinchGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ofPinchGestureRecognizer.m; sourceTree = "<group>"; };
 		ECE069DF18DBBE5400CA560A /* ofSwipeGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofSwipeGestureRecognizer.h; sourceTree = "<group>"; };
+		ECE069E018DBBE5400CA560A /* ofSwipeGestureRecognizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofSwipeGestureRecognizer.mm; sourceTree = "<group>"; };
 		ECE069E118DBBE5400CA560A /* ofTapGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofTapGestureRecognizer.h; sourceTree = "<group>"; };
 		ECE069E218DBBE5400CA560A /* ofTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ofTapGestureRecognizer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +119,7 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* examplePanRecognize.app */,
+				1D6058910D05DD3D006BFB54 /* exampleSwipeRecognize.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -232,7 +232,7 @@
 				ECE069DD18DBBE5400CA560A /* ofPinchGestureRecognizer.h */,
 				ECE069DE18DBBE5400CA560A /* ofPinchGestureRecognizer.m */,
 				ECE069DF18DBBE5400CA560A /* ofSwipeGestureRecognizer.h */,
-				EC51F9F018DFD32200EF932D /* ofSwipeGestureRecognizer.mm */,
+				ECE069E018DBBE5400CA560A /* ofSwipeGestureRecognizer.mm */,
 				ECE069E118DBBE5400CA560A /* ofTapGestureRecognizer.h */,
 				ECE069E218DBBE5400CA560A /* ofTapGestureRecognizer.m */,
 			);
@@ -242,9 +242,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* examplePanRecognize */ = {
+		1D6058900D05DD3D006BFB54 /* exampleSwipeRecognize */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "examplePanRecognize" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "exampleSwipeRecognize" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
@@ -256,9 +256,9 @@
 			dependencies = (
 				E41D410413B3A11300A75A5D /* PBXTargetDependency */,
 			);
-			name = examplePanRecognize;
+			name = exampleSwipeRecognize;
 			productName = iPhone;
-			productReference = 1D6058910D05DD3D006BFB54 /* examplePanRecognize.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* exampleSwipeRecognize.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -269,7 +269,7 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "examplePanRecognize" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "exampleSwipeRecognize" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -289,7 +289,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* examplePanRecognize */,
+				1D6058900D05DD3D006BFB54 /* exampleSwipeRecognize */,
 			);
 		};
 /* End PBXProject section */
@@ -343,9 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE069E818DBBE5400CA560A /* ofTapGestureRecognizer.m in Sources */,
+				ECE069E718DBBE5400CA560A /* ofSwipeGestureRecognizer.mm in Sources */,
 				E4D8936E11527B74007E1F53 /* main.mm in Sources */,
 				ECE069E518DBBE5400CA560A /* ofPanGestureRecognizer.m in Sources */,
-				EC51F9F118DFD32200EF932D /* ofSwipeGestureRecognizer.mm in Sources */,
 				E4D8936F11527B74007E1F53 /* testApp.mm in Sources */,
 				ECE069E618DBBE5400CA560A /* ofPinchGestureRecognizer.m in Sources */,
 			);
@@ -369,7 +369,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ofxiOS_Prefix.pch;
 				INFOPLIST_FILE = "ofxiOS-Info.plist";
-				PRODUCT_NAME = examplePanRecognize;
+				PRODUCT_NAME = exampleSwipeRecognize;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Debug;
@@ -380,7 +380,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ofxiOS_Prefix.pch;
 				INFOPLIST_FILE = "ofxiOS-Info.plist";
-				PRODUCT_NAME = examplePanRecognize;
+				PRODUCT_NAME = exampleSwipeRecognize;
 				VALID_ARCHS = "armv6 armv7";
 			};
 			name = Release;
@@ -448,7 +448,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "examplePanRecognize" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "exampleSwipeRecognize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -457,7 +457,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "examplePanRecognize" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "exampleSwipeRecognize" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
