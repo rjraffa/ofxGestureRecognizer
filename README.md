@@ -10,6 +10,8 @@ The gestures included are:
 
 It makes use of the native gesture recognizers as well as allowing touch events to pass through to openFrameworks.
 
+Current examples include panning and swipping.
+
 Please note, I am currently overriding the deault cancelsTouchesInView so that touch events are not gobbled up by the gestureRecognizer in objective-C. The touch events are passed to the appropriate View so openFrameworks can also make use of the touch events. If you want to go back to the default, just comment out the cancelsTouchesInView line.
 
 The challenge is using continuous gesture interpreters (like pan) as opposed to discrete gestures (such as double tap). Right now, gestures are not recognized simultaneously (meaning you won't see a swipe and a pan recognized in the same gesture if you are using both recognizer classes).
