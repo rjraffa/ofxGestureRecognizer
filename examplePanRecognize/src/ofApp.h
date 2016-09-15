@@ -1,21 +1,18 @@
 #pragma once
 
-#include "ofMain.h"
 #include "ofxiOS.h"
-#include "ofxiOSExtras.h"
 
 #include "ofPanGestureRecognizer.h"
 #include "ofPinchGestureRecognizer.h"
 #include "ofSwipeGestureRecognizer.h"
 #include "ofTapGestureRecognizer.h"
 
-class testApp : public ofxiOSApp{
-    
+class ofApp : public ofxiOSApp{
+	
     public:
         void setup();
         void update();
         void draw();
-	
         void exit();
     
         void touchDown(ofTouchEventArgs & touch);
@@ -30,22 +27,21 @@ class testApp : public ofxiOSApp{
         void deviceOrientationChanged(int newOrientation);
 	
         ofTrueTypeFont basicFont;
-        
+    
         //to identify specific pan/pinch/tap/swipe gestures
         ofPanGestureRecognizer      *recogPan;
-        
+    
         //variables used by openFrameworks
         ofPoint         pos;
         ofPoint         speed;
         float           angle;
-        
+    
         //info coming from ofPanGestureRecognizer
         ofPoint         velocity;
         ofPoint         startLocation;
         ofPoint         endLocation;
         bool            panning;
 	
-        bool            retina;
 };
 
 

@@ -1,12 +1,12 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){	
-	ofSetOrientation(OF_ORIENTATION_90_RIGHT);//Set iOS to Orientation Landscape Right
-
+void ofApp::setup(){	
+    
+	ofSetFrameRate(30);
     ofBackground(255, 255, 255);
     
-    basicFont.loadFont("verdana.ttf", 10, true, true, true);        //load in font that is used throughout app
+    basicFont.load("verdana.ttf", 10, true, true, true);        //load in font that is used throughout app
     
     ofxAccelerometer.setup();               //accesses accelerometer data
     ofxiPhoneAlerts.addListener(this);      //allows elerts to appear while app is running
@@ -15,43 +15,37 @@ void testApp::setup(){
     EAGLView *view = ofxiPhoneGetGLView();
     recogPan = [[ofPanGestureRecognizer alloc] initWithView:view];
     
-    pos.set(0.0, 0.0);
-    speed.set(0.0, 0.0);
+    pos.set (0, 0, 0);
+    speed.set (0, 0, 0);
     angle = 0.0;
     
-    velocity.set(0.0, 0.0);
-    startLocation.set(0.0, 0.0);
-    endLocation.set(0.0, 0.0);
+    velocity.set (0, 0, 0);
+    startLocation.set (0, 0, 0);
+    endLocation.set(0, 0, 0);
     panning = false;
     
-    if (ofGetWidth() > 480) retina = true;
-    
-	ofSetFrameRate(60);
 }
 
 
 //--------------------------------------------------------------
-void testApp::update(){
-	
+void ofApp::update(){
+
     //divide by the amount you like to get the speed your looking for
     pos = pos + speed/20.0;
     
     panning =     recogPan->panning;
-    
+
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
-
+void ofApp::draw(){
+	
     ofBackground (255, 255, 255);
     
     ofSetColor(255, 0, 0);
-    if (retina) ofCircle(pos.x, pos.y, 40);
-        else ofCircle(pos.x, pos.y, 40);
+    ofDrawCircle(pos.x, pos.y, 20);
     
     ofSetColor(0, 0, 0);
-    if (retina) ofScale(2.0, 2.0); //increase type size if retina screen
-
     ofDrawBitmapString("mouseX: "+ofToString(ofGetMouseX()), 25, 25);
     ofDrawBitmapString("mouseY: "+ofToString(ofGetMouseY()), 25, 45);
     ofDrawBitmapString("velocityX: "+ofToString(speed.x), 25, 65);
@@ -63,26 +57,28 @@ void testApp::draw(){
     ofDrawBitmapString("endLocationY: "+ofToString(endLocation.y), 25, 165);
     ofDrawBitmapString("panning: "+ofToString(panning), 25, 185);
     ofDrawBitmapString("angle: "+ofToString(angle), 25, 205);
+
 }
 
 //--------------------------------------------------------------
-void testApp::exit(){
+void ofApp::exit(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::touchDown(ofTouchEventArgs & touch){
+void ofApp::touchDown(ofTouchEventArgs & touch){
 
-    speed.set(0.0, 0.0);
+    speed.set (0, 0, 0);
+    angle = 0;
     
     pos.x = touch.x;
     pos.y = touch.y;
-    
+
 }
 
 //--------------------------------------------------------------
-void testApp::touchMoved(ofTouchEventArgs & touch){
-	
+void ofApp::touchMoved(ofTouchEventArgs & touch){
+
     pos.x = touch.x;
     pos.y = touch.y;
     
@@ -91,56 +87,65 @@ void testApp::touchMoved(ofTouchEventArgs & touch){
         startLocation.x =     recogPan->startLocation.x;
         startLocation.y =     recogPan->startLocation.y;
     }
-    
+
 }
 
 //--------------------------------------------------------------
-void testApp::touchUp(ofTouchEventArgs & touch){
-	
+void ofApp::touchUp(ofTouchEventArgs & touch){
+
     //gathers velocity info
-    speed.x =     recogPan->velocity.x;
-    speed.y =     recogPan->velocity.y;
-    
-    pos.x = touch.x;
-    pos.y = touch.y;
-    
-    //grabs actual end position which is based off of real origin
-    endLocation.x =     recogPan->endLocation.x;
-    endLocation.y =     recogPan->endLocation.y;
-    
-    //determine angle
-    float deltaY = recogPan->delta.y;
-    float deltaX = recogPan->delta.x;
-    angle = atan2(deltaY, deltaX) * 180 / PI;
+    if (panning) {
+        speed.x =     recogPan->velocity.x;
+        speed.y =     recogPan->velocity.y;
+        
+        pos.x = touch.x;
+        pos.y = touch.y;
+        
+        //grabs actual end position which is based off of real origin
+        endLocation.x =     recogPan->endLocation.x;
+        endLocation.y =     recogPan->endLocation.y;
+        
+        //determine angle
+        float deltaY = recogPan->delta.y;
+        float deltaX = recogPan->delta.x;
+        angle = atan2(deltaY, deltaX) * 180 / PI;
+    } else {
+        
+        speed.set (0, 0, 0);
+        angle = 0;
+        
+    }
+}
+
+//--------------------------------------------------------------
+void ofApp::touchDoubleTap(ofTouchEventArgs & touch){
+
+}
+
+
+//--------------------------------------------------------------
+void ofApp::touchCancelled(ofTouchEventArgs & touch){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::lostFocus(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::touchDoubleTap(ofTouchEventArgs & touch){
-
-}
-
-//--------------------------------------------------------------
-void testApp::touchCancelled(ofTouchEventArgs & touch){
-
-}
-
-//--------------------------------------------------------------
-void testApp::lostFocus(){
+void ofApp::gotFocus(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::gotFocus(){
+void ofApp::gotMemoryWarning(){
     
 }
 
 //--------------------------------------------------------------
-void testApp::gotMemoryWarning(){
+void ofApp::deviceOrientationChanged(int newOrientation){
     
 }
 
-//--------------------------------------------------------------
-void testApp::deviceOrientationChanged(int newOrientation){
-    
-}
+
