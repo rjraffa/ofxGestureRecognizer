@@ -1,7 +1,7 @@
 /*
  *  ofPanGestureRecognizer.h
  *
- *  Created by Ryan Raffa on 5/13/12.
+ *  Created by Ryan Raffa on 5/13/12
  *  Based on example code by http://www.daanvanhasselt.com
  *
  */

@@ -1,8 +1,8 @@
 /*
  *  ofPinchGestureRecognizer.m
  *
- *  Created by Ryan Raffa on 5/13/12.
- *  Updated by Ryan Raffa on 9/14/16.
+ *  Created by Ryan Raffa on 5/13/12
+ *  Updated by Ryan Raffa on 9/14/16
  *
  */
 
